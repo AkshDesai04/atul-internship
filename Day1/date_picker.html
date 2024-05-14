@@ -1,8 +1,23 @@
 <html>
-	<head>
-		<title>Date Picker - Day 1 - Atul - Aksh</title>
-	</head>
-	<body>
-		<input type = "date" max = "2024-05-14">
-	</body>
+<head>
+	<title>Date Picker(JQuery) - Day 1 - Atul - Aksh</title>
+	
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.8.24/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.8.2.js"></script>
+	<script src="https://code.jquery.com/ui/1.8.24/jquery-ui.js"></script>
+</head>
+<body>
+	<h1>Date Picker using JQuery</h1>
+	<input type = "text" name = "DATE_PICKER" id="DATE_PICKER" placeholder="Enter Date">
+	
+	<script type="text/javascript">
+		$("#DATE_PICKER").live('click',function() {
+			 $(this).datepicker({
+				  dateFormat: "yy-mm-dd",
+				changeMonth: true,
+				changeYear: true
+				}).datepicker( "show" );
+			});
+	</script>
+</body>
 </html>

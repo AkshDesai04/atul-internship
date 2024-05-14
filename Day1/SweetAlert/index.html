@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+	</head>
+	<body>
+		<script>swal("Welcome to Aksh's website", "Hola!", "success", {button: "Hey 😄"});</script>
+		<button type = "button" onclick = "greet()">Hey there</button>
+		<button type = "button" onclick = "openSecret()">Open Secret</button>
+		<button type = "button" onclick = "whoDevelopedThis()">Who made this?</button>
+		
+		<script>
+			var today = new Date();
+			function whoDevelopedThis() {
+				swal("Aksh made this website", "Hi from Aksh Desai", 'https://avatars.githubusercontent.com/u/68443055?v=4', {button: "Hey Aksh"});
+			}
+			function greet() {
+				swal("Hey there!", "Greetings from Aksh", {button: "Bye 👋"});
+			}
+			function openSecret() {
+				swal("Confidential!", "Password: AkshDesai1234!", {button: "Ok️"});
+			}
+		</script>
+	</body>
+</html>

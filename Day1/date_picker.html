@@ -15,9 +15,27 @@
 			 $(this).datepicker({
 				  dateFormat: "yy-mm-dd",
 				}).datepicker( "show" );
+
 			});
 			$( "#DATE_PICKER" ).datepicker({
-					maxDate: new Date()	
+					maxDate: new Date(),
+					    onSelect: function( selectedDate ) {
+							if(!$(this).data().datepicker.first){
+								$(this).data().datepicker.inline = true
+								$(this).data().datepicker.first = selectedDate;
+							}else{
+								if(selectedDate > $(this).data().datepicker.first){
+									$(this).val($(this).data().datepicker.first+" - "+selectedDate);
+								}else{
+									$(this).val(selectedDate+" - "+$(this).data().datepicker.first);
+								}
+								$(this).data().datepicker.inline = false;
+							}
+						},
+						onClose:function(){
+							delete $(this).data().datepicker.first;
+							$(this).data().datepicker.inline = false;
+						}
 				}
 			);
 			$("#DATE_PICKER").datepicker({});

@@ -8,39 +8,39 @@
 </head>
 <body>
 	<h1>Date Picker using JQuery</h1>
-	<input type = "text" name = "DATE_PICKER" id="DATE_PICKER" placeholder="Enter Date">
+	<input type = "text" name = "FROM_DATE_PICKER" id="FROM_DATE_PICKER" placeholder="Enter Date">
+	<lable> to </label>
+	<input type = "text" name = "TO_DATE_PICKER" id="TO_DATE_PICKER" placeholder="Enter Date">
 	
 	<script type="text/javascript">
-		$("#DATE_PICKER").live('click', function() {
+		$("#FROM_DATE_PICKER").live('click', function() {
 			 $(this).datepicker({
 				  dateFormat: "yy-mm-dd",
 				}).datepicker( "show" );
 
 			});
-			$( "#DATE_PICKER" ).datepicker({
-					maxDate: new Date(),
-					    onSelect: function( selectedDate ) {
-							if(!$(this).data().datepicker.first){
-								$(this).data().datepicker.inline = true
-								$(this).data().datepicker.first = selectedDate;
-							}else{
-								if(selectedDate > $(this).data().datepicker.first){
-									$(this).val($(this).data().datepicker.first+" - "+selectedDate);
-								}else{
-									$(this).val(selectedDate+" - "+$(this).data().datepicker.first);
-								}
-								$(this).data().datepicker.inline = false;
-							}
-						},
-						onClose:function(){
-							delete $(this).data().datepicker.first;
-							$(this).data().datepicker.inline = false;
-						}
+			$( "#FROM_DATE_PICKER" ).datepicker({
+					maxDate: new Date()
 				}
 			);
-			$("#DATE_PICKER").datepicker({});
-			$("#DATE_PICKER").datepicker("option", "changeMonth", true);
-			$("#DATE_PICKER").datepicker("option", "changeYear", true);
+			$("#FROM_DATE_PICKER").datepicker({});
+			$("#FROM_DATE_PICKER").datepicker("option", "changeMonth", true);
+			$("#FROM_DATE_PICKER").datepicker("option", "changeYear", true);
+			
+			
+		$("#TO_DATE_PICKER").live('click', function() {
+			 $(this).datepicker({
+				  dateFormat: "yy-mm-dd",
+				}).datepicker( "show" );
+
+			});
+			$( "#TO_DATE_PICKER" ).datepicker({
+					maxDate: new Date()
+				}
+			);
+			$("#TO_DATE_PICKER").datepicker({});
+			$("#TO_DATE_PICKER").datepicker("option", "changeMonth", true);
+			$("#TO_DATE_PICKER").datepicker("option", "changeYear", true);
 	</script>
 </body>
 </html>

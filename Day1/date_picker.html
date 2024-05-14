@@ -11,14 +11,18 @@
 	<input type = "text" name = "DATE_PICKER" id="DATE_PICKER" placeholder="Enter Date">
 	
 	<script type="text/javascript">
-		$("#DATE_PICKER").live('click',function() {
+		$("#DATE_PICKER").live('click', function() {
 			 $(this).datepicker({
 				  dateFormat: "yy-mm-dd",
-				changeMonth: true,
-				changeYear: true
 				}).datepicker( "show" );
 			});
-			$( "#DATE_PICKER" ).datepicker({  maxDate: new Date() });
+			$( "#DATE_PICKER" ).datepicker({
+					maxDate: new Date()	
+				}
+			);
+			$("#DATE_PICKER").datepicker({});
+			$("#DATE_PICKER").datepicker("option", "changeMonth", true);
+			$("#DATE_PICKER").datepicker("option", "changeYear", true);
 	</script>
 </body>
 </html>
